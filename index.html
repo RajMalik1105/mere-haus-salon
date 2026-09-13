@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M&Eacute;RE HAUS &mdash; Effortless Luxury Hair Atelier</title>
+  <meta name="description" content="M&eacute;re Haus is a luxury hair salon and bespoke hair collection atelier specializing in precision cuts, custom balayage, and organic scalp treatments.">
+  <!-- Lenis Smooth Inertia Scroll Library -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/logo.jpg" type="image/jpeg">
+</head>
+<body>
+
+  <!-- Custom Minimalist UI Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-ring" id="cursorRing"></div>
+
+  <div class="mere-loader-wrapper" id="mereLoader">
+    <!-- Your Rotating Logo -->
+    <img src="assets/logo.jpg" alt="M&eacute;re Haus Logo" class="mere-loader-logo">
+    
+    <!-- Your Static Brand Name -->
+    <div class="mere-loader-text">M&Eacute;RE HAUS</div>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('mereLoader');
+      if (loader) {
+        setTimeout(() => {
+          loader.classList.add('loader-finished');
+        }, 500);
+      }
+    });
+  </script>
+
+  <!-- ==========================================
+       SITE HEADER / NAVIGATION (STICKY WITH TRANSITION)
+       ========================================== -->
+  <header class="mere-header">
+    
+    <!-- Safe Spelling Logo & Image -->
+    <a href="/" class="mere-logo-container">
+      <img src="assets/logo.jpg" alt="M&eacute;re Haus Logo" class="mere-header-logo-img">
+      <span class="mere-logo">M&Eacute;RE HAUS</span>
+    </a>
+    
+    <!-- The Hamburger Button -->
+    <button class="mere-hamburger" id="mereHamburger" aria-label="Toggle Navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <nav class="mere-nav-links" id="mereNavLinks">
+      <a href="#founders">Founders</a>
+      <a href="#experience">Experience</a>
+      <a href="#services">Services</a>
+      
+      <!-- The integrated Timely booking button -->
+      <a href="https://bookings.gettimely.com/mrhaus/bb/book" target="_blank" rel="noopener noreferrer" class="mere-header-book-btn">
+        Book Now
+      </a>
+    </nav>
+    
+  </header>
+
+  <script>
+    // This tiny script listens for clicks on the hamburger icon and toggles the menu open/closed
+    document.addEventListener("DOMContentLoaded", function() {
+      const hamburger = document.getElementById("mereHamburger");
+      const navLinks = document.getElementById("mereNavLinks");
+
+      hamburger.addEventListener("click", function() {
+        // Toggles the 'open' animation on the icon
+        hamburger.classList.toggle("open");
+        // Toggles the dropdown menu 
+        navLinks.classList.toggle("active");
+      });
+    });
+  </script>
+
+
+  <main>
+    <!-- ==========================================
+         HERO / WELCOME SECTION (100vh with 1000271246.jpg Background)
+         ========================================== -->
+    <section id="hero" class="hero-full-bg">
+      <div class="hero-bg-image img-zoom-reveal">
+        <img src="assets/1000271246.jpg" alt="M&eacute;re Haus Atelier Salon Arched Mirror and Tan Chair">
+      </div>
+      <div class="hero-dark-overlay"></div>
+
+      <div class="hero-centered-content">
+        <div class="hero-tag line-mask"><span class="line-mask-inner">M&Eacute;RE HAUS &bull; ATELIER</span></div>
+        
+        <!-- Line-masked Massive Headline -->
+        <h1 class="hero-title-massive">
+          <div class="line-mask"><span class="line-mask-inner">Effortless Luxury.</span></div>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="hero-subheadline line-mask delay-1">
+          <span class="line-mask-inner">A premium hair collection and styling experience.</span>
+        </p>
+
+        <!-- Prominent Solid Mocha Brown CTA Button -->
+        <div class="hero-cta-center line-mask delay-2">
+          <span class="line-mask-inner">
+            <a href="https://bookings.gettimely.com/mrhaus/bb/book" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #a47e6a; color: #FFFFFF; font-family: var(--font-body, sans-serif); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 18px 45px; border-radius: 2px; transition: opacity 0.3s ease; text-align: center;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+              BOOK AN APPOINTMENT
+            </a>
+          </span>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         THE 'MEET THE FOUNDERS' SECTION (50/50 Split Grid, #F7F3F0 Soft Cream)
+         ========================================== -->
+    <section id="founders" class="founders-section section-padding">
+      <div class="founders-grid">
+        <!-- Left Side: Image 1000271228.jpg with soft rounded corners & negative space -->
+        <div class="founders-image-container">
+          <div class="img-zoom-reveal rounded-frame">
+            <img src="assets/1000271228.jpg" alt="The Founders of M&eacute;re Haus in black and white laughing back-to-back">
+          </div>
+        </div>
+
+        <!-- Right Side: Content -->
+        <div class="founders-content">
+          <span class="section-subtitle line-mask"><span class="line-mask-inner">Meet The Founders</span></span>
+          
+          <h2 class="section-title">
+            <div class="line-mask"><span class="line-mask-inner">The Story of</span></div>
+            <div class="line-mask"><span class="line-mask-inner"><span>M&eacute;re Haus.</span></span></div>
+          </h2>
+          
+          <p class="about-text line-mask delay-1">
+            <span class="line-mask-inner">M&eacute;re Haus, meaning <em>"Mother's House"</em>, is a mother and daughter salon created by Amanda and Justine. Built around our shared love of beautiful hair, M&eacute;re Haus combines Amanda's years of experience and signature techniques with Justine's passion for colour, extensions and relaxation.</span>
+          </p>
+          
+          <p class="about-text line-mask delay-2">
+            <span class="line-mask-inner">Together, we've created a space that feels personal, welcoming and relaxed, while delivering highly skilled, modern hair. M&eacute;re Haus is our home, our craft and our way of creating a salon experience that feels a little different from the rest.</span>
+          </p>
+
+          <div class="line-mask delay-3">
+            <span class="line-mask-inner">
+              <a href="#services" class="subtle-story-link magnetic-btn">Read Our Story &rarr;</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         INTERACTIVE TEAM PROFILES (MODAL REDESIGN)
+         ========================================== -->
+    <section id="team">
+      <div class="mere-founders-container">
+        
+        <!-- Amanda -->
+        <div class="mere-founder-profile">
+          <div class="mere-founder-img-wrapper amanda-tilt">
+            <img src="assets/1000271239.jpg" alt="Amanda - M&eacute;re Haus">
+          </div>
+          <h3 class="mere-founder-name">Amanda</h3>
+          <p class="mere-founder-role">Co-Founder & Master Stylist</p>
+          <p class="mere-founder-desc">With years of hands-on experience and a passion for bespoke color work, Amanda brings an unparalleled level of artistry to every transformation. She works directly with factory sources to ensure the highest quality sourcing, cuticle integrity, and custom color matching for the M&eacute;re Haus collection.</p>
+        </div>
+
+        <!-- Justin -->
+        <div class="mere-founder-profile">
+          <div class="mere-founder-img-wrapper justin-tilt">
+            <img src="assets/1000271240.jpg" alt="Justin - M&eacute;re Haus">
+          </div>
+          <h3 class="mere-founder-name">Justin</h3>
+          <p class="mere-founder-role">Co-Founder & Extension Specialist</p>
+          <p class="mere-founder-desc">Combining technical precision with deep industry knowledge, Justin has been instrumental in developing M&eacute;re Haus's signature installation techniques. His expertise ensures that every custom order is flawlessly executed to perfectly match the client's natural texture, density, and lifestyle.</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         THE 'SALON EXPERIENCE' SECTION (Reversed 50/50 Grid, #E8DFD5 Warm Beige)
+         ========================================== -->
+    <section id="experience" class="experience-section section-padding">
+      <div class="experience-grid">
+        <!-- Left Side: Content -->
+        <div class="experience-content">
+          <span class="section-subtitle line-mask"><span class="line-mask-inner">THE M&Eacute;RE HAUS EXPERIENCE</span></span>
+          
+          <h2 class="section-title">
+            <div class="line-mask"><span class="line-mask-inner">A Moment to Switch Off.</span></div>
+          </h2>
+          
+          <p class="about-text line-mask delay-1">
+            <span class="line-mask-inner">At M&eacute;re Haus, your appointment is about more than just beautiful hair. It is a space designed for you to truly switch off and be looked after.</span>
+          </p>
+
+          <p class="about-text line-mask delay-2">
+            <span class="line-mask-inner">Led by Justine's signature calming touch, our appointments incorporate incredible massages, soothing scalp rituals, and dedicated head spa treatments. Every detail is thoughtfully curated to bring a sense of deep relaxation to your transformation.</span>
+          </p>
+
+          <div class="line-mask delay-3">
+            <span class="line-mask-inner">
+              <a href="https://bookings.gettimely.com/mrhaus/bb/book" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #5C432E; color: #FFFFFF; font-family: var(--font-body, sans-serif); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 18px 40px; border-radius: 2px; transition: opacity 0.3s ease; margin-top: 10px;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                RESERVE YOUR EXPERIENCE
+              </a>
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Side: Image 1000271227.jpg with Parallax Effect -->
+        <div class="experience-image-container">
+          <div class="parallax-img-container img-zoom-reveal">
+            <img src="assets/1000271227.jpg" alt="M&eacute;re Haus Signature Cocktail, candle, and white rose display" class="parallax-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         BRAND STORY: M&Egrave;RE HAUS EXTENSIONS
+         ========================================== -->
+    <section id="extensions-story">
+      <div class="extensions-container">
+        
+        <!-- Left Side: Your New Summarized Text -->
+        <div class="extensions-text">
+          <h2 style="font-family: var(--font-heading, serif); font-size: 2.8rem; font-weight: 300; color: #5C432E; margin-bottom: 25px; line-height: 1.1;">Custom-Tailored For Your Hair</h2>
+          
+          <p style="font-family: var(--font-body, sans-serif); font-size: 0.95rem; line-height: 1.8; color: #3A2A1D; margin-bottom: 15px;">
+            At M&eacute;re Haus, we source and match extensions directly to your natural color and texture, eliminating the need for post-installation coloring.
+          </p>
+          
+          <p style="font-family: var(--font-body, sans-serif); font-size: 0.95rem; line-height: 1.8; color: #3A2A1D; margin-bottom: 15px;">
+            By working directly with our factory, we provide bespoke custom orders and rigorously test our hair for real-world humidity performance.
+          </p>
+
+          <p style="font-family: var(--font-body, sans-serif); font-size: 0.95rem; line-height: 1.8; color: #3A2A1D;">
+            The result is a flawlessly personalized extension transformation designed specifically for you and the way you actually live.
+          </p>
+        </div>
+
+        <!-- Right Side: The 4-Photo Interactive Messy Table -->
+        <div class="messy-table">
+          <div class="messy-photo p1"><img src="assets/1000271970.jpg" alt="M&egrave;re Haus Hair Sourcing"></div>
+          <div class="messy-photo p2"><img src="assets/1000271973.jpg" alt="Premium Blonde Wefts"></div>
+          <div class="messy-photo p3"><img src="assets/1000271977.jpg" alt="Bespoke Extensions"></div>
+          <div class="messy-photo p4"><img src="assets/1000271980.jpg" alt="Custom Extensions"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         SERVICES & HAIR COLLECTION MENU (#F7F3F0 Soft Cream Interactive Editorial Split Layout)
+         ========================================== -->
+    <section id="services" style="background-color: var(--bg-cream, #F7F3F0);">
+      <div class="mere-menu-wrapper">
+        
+        <div class="mere-menu-header">
+          <h4 style="font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; margin-bottom: 15px; opacity: 0.8;">Investment & Care</h4>
+          <h2 style="font-family: var(--font-heading, serif); font-size: 3.2rem; font-weight: 300; margin-bottom: 25px;">The Service Menu</h2>
+          <hr style="width: 60px; border: 0; border-top: 1px solid #5C432E; margin: 0 auto;">
+        </div>
+
+        <!-- 1. SIP & STYLED FRIYAY -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Sip & Styled Friyay 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>SSF | Friyay's only (1 hour, 15 mins)</span>
+              <span class="service-price">$50</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 2. LUXURY EXTENSION EDIT -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            M&egrave;re Haus Luxury Hair Extension Edit 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>The Consult | MHLHE (30 mins)</span>
+              <span class="service-price">Complimentary</span>
+            </div>
+            <div class="menu-item-row">
+              <span>Genius Weft Package | 18-20" 100g (5h 15m)</span>
+              <span class="service-price">$1150</span>
+            </div>
+            <div class="menu-item-row">
+              <span>Genius Weft Package | 20-22" 100g (5h 45m)</span>
+              <span class="service-price">$1250</span>
+            </div>
+            <div class="menu-item-row">
+              <span>Genius Weft Package | 22-24" 100g (5h 45m)</span>
+              <span class="service-price">$1300</span>
+            </div>
+            <div class="menu-item-row">
+              <span>Tape Weft | 18-20" 100g (4h 15m)</span>
+              <span class="service-price">$900</span>
+            </div>
+            <div class="menu-item-row">
+              <span>Tape Weft | 20-22" 100g (5h 25m)</span>
+              <span class="service-price">$1100</span>
+            </div>
+            <div class="menu-item-row">
+              <span>Tape Weft | 22-24" 100g (5h 50m)</span>
+              <span class="service-price">$1200</span>
+            </div>
+            <div class="menu-item-row">
+              <span>50g Weft add on (30 mins)</span>
+              <span class="service-price">$150</span>
+            </div>
+            <div class="menu-item-row">
+              <span>Extension Maintence | Weft (30 mins)</span>
+              <span class="service-price">$130</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 3. SIGNATURE BLONDE - FULL HEAD -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Signature Blonde Package | Full Head of Foils 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>SB | Short Hair (2h 30m)</span>
+              <span class="service-price">$200</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SB- Medium Hair (3 hours)</span>
+              <span class="service-price">$260</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SB- Long Hair (3h 30m)</span>
+              <span class="service-price">$270</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SB- Extra Long Hair (4 hours)</span>
+              <span class="service-price">$285</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 4. SIGNATURE BLONDE - HALF HEAD -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Signature Blonde Package | Half Head of Foils 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>SB 1/2 | Short Hair (1h 35m)</span>
+              <span class="service-price">$120</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SB 1/2 | Medium Hair (2 hours)</span>
+              <span class="service-price">$160</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SB 1/2 | Long Hair (2h 45m)</span>
+              <span class="service-price">$170</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SB 1/2 | Extra Long (3 hours)</span>
+              <span class="service-price">$190</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 5. HALO GLOW -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Halo Glow Package | Face framing 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>HG | Short Hair (1h 15m)</span>
+              <span class="service-price">$95</span>
+            </div>
+            <div class="menu-item-row">
+              <span>HG | Medium Hair (1h 45m)</span>
+              <span class="service-price">$120</span>
+            </div>
+            <div class="menu-item-row">
+              <span>HG | Long Hair (2 hours)</span>
+              <span class="service-price">$135</span>
+            </div>
+            <div class="menu-item-row">
+              <span>HG | Extra Long Hair (2h 15m)</span>
+              <span class="service-price">$145</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 6. GLOSS TONER -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Gloss Toner Package | Blonde refresh 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>GT | Short Hair (45 mins)</span>
+              <span class="service-price">$45</span>
+            </div>
+            <div class="menu-item-row">
+              <span>GT | Medium Hair (55 mins)</span>
+              <span class="service-price">$50</span>
+            </div>
+            <div class="menu-item-row">
+              <span>GT | Long Hair (1 hour)</span>
+              <span class="service-price">$60</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 7. GLOBAL BLONDE -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Global Blonde Package | Bleach on Scalp 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>GB | Short Hair (2 hours)</span>
+              <span class="service-price">$150</span>
+            </div>
+            <div class="menu-item-row">
+              <span>GB | Medium Hair (2h 30m)</span>
+              <span class="service-price">$180</span>
+            </div>
+            <div class="menu-item-row">
+              <span>GB | Long Hair (2h 45m)</span>
+              <span class="service-price">$190</span>
+            </div>
+            <div class="menu-item-row">
+              <span>GB | Extra Long Hair (3 hours)</span>
+              <span class="service-price">$200</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 8. DIMENSIONAL BLONDE -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Dimensional Blonde Package | Lived in / Low Maintenance 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>DB | Short Hair (2h 20m)</span>
+              <span class="service-price">$200</span>
+            </div>
+            <div class="menu-item-row">
+              <span>DB | Medium Hair (2h 45m)</span>
+              <span class="service-price">$240</span>
+            </div>
+            <div class="menu-item-row">
+              <span>DB | Long Hair (3 hours)</span>
+              <span class="service-price">$260</span>
+            </div>
+            <div class="menu-item-row">
+              <span>DB | Extra Long Hair (3 hours)</span>
+              <span class="service-price">$280</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 9. SOFT GLOSSED BRUNETTE -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Soft Glossed Brunette Package 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>SGB | Short Hair (1h 30m)</span>
+              <span class="service-price">$100</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SGB | Medium Hair (1h 45m)</span>
+              <span class="service-price">$120</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SGB | Long Hair (1h 50m)</span>
+              <span class="service-price">$130</span>
+            </div>
+            <div class="menu-item-row">
+              <span>SGB | Extra Long Hair (2h 5m)</span>
+              <span class="service-price">$140</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 10. DIMENSIONAL BRUNETTE -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Dimensional Brunette Package | Sun kissed highlights 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>DB | Short Hair (1h 30m)</span>
+              <span class="service-price">$160</span>
+            </div>
+            <div class="menu-item-row">
+              <span>DB | Medium Hair (2h 30m)</span>
+              <span class="service-price">$190</span>
+            </div>
+            <div class="menu-item-row">
+              <span>DB | Long Hair (3h 5m)</span>
+              <span class="service-price">$210</span>
+            </div>
+            <div class="menu-item-row">
+              <span>DB | Extra Long Hair (3h 15m)</span>
+              <span class="service-price">$240</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 11. RED VELVET GLOSS -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Red Velvet Gloss Package 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>RVG | Short Hair (1h 30m)</span>
+              <span class="service-price">$100</span>
+            </div>
+            <div class="menu-item-row">
+              <span>RVG | Medium Hair (1h 45m)</span>
+              <span class="service-price">$120</span>
+            </div>
+            <div class="menu-item-row">
+              <span>RVG | Long Hair (2 hours)</span>
+              <span class="service-price">$130</span>
+            </div>
+            <div class="menu-item-row">
+              <span>RVG | Long Hair (2h 15m)</span>
+              <span class="service-price">$140</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 12. CHERRY COLA GLOSS -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Cherry Cola Gloss Package | Dimensional Red 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>CCG | Extra Long Hair (3h 15m)</span>
+              <span class="service-price">$240</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 13. COWBOY COPPER GLOSS -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Cowboy Copper Gloss Package 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>CCG | Short Hair (1h 30m)</span>
+              <span class="service-price">$100</span>
+            </div>
+            <div class="menu-item-row">
+              <span>CCG | Medium Hair (1h 45m)</span>
+              <span class="service-price">$120</span>
+            </div>
+            <div class="menu-item-row">
+              <span>CCG | Long Hair (2 hours)</span>
+              <span class="service-price">$130</span>
+            </div>
+            <div class="menu-item-row">
+              <span>CCG | Extra Long Hair (2 hours)</span>
+              <span class="service-price">$140</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 14. RESET, RESTORE & REJUVENATE -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Reset, Restore & Rejuvenate Package 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>RRR | Relax Girl (1h 15m)</span>
+              <span class="service-price">$115</span>
+            </div>
+            <div class="menu-item-row">
+              <span>RRR | Relax Girl (1h 50m)</span>
+              <span class="service-price">$140</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- 15. BLOW-DRY BAR -->
+        <details class="mere-menu-category">
+          <summary class="mere-menu-summary">
+            Blow-dry Bar 
+            <span class="menu-icon-wrap"><span class="menu-plus-icon">+</span></span>
+          </summary>
+          <div class="menu-content-box">
+            <div class="menu-item-row">
+              <span>BB | Smooth Vogue (1 hour)</span>
+              <span class="service-price">$45</span>
+            </div>
+            <div class="menu-item-row">
+              <span>BB | Bouncy blowout (1h 5m)</span>
+              <span class="service-price">$45</span>
+            </div>
+          </div>
+        </details>
+
+        <!-- BOOKING BUTTON -->
+        <div style="text-align: center; margin-top: 80px;">
+          <a href="https://bookings.gettimely.com/mrhaus/bb/book" target="_blank" rel="noopener noreferrer" style="display: inline-block; background-color: #a47e6a; color: #FFFFFF; font-family: var(--font-body, sans-serif); font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 18px 45px; border-radius: 2px; transition: opacity 0.3s ease; text-align: center;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+            BOOK AN APPOINTMENT
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================
+         THE INTERACTIVE 'LOOKBOOK' (MESSY DECK SPLIT-SCREEN LAYOUT) (#E8DFD5 Warm Beige)
+         ========================================== -->
+    <section id="gallery" class="lookbook-section" style="background-color: var(--bg-beige); padding: 100px 5%;">
+      <div class="lookbook-split-grid">
+        
+        <!-- Left Column: The Photo Stack -->
+        <div class="lookbook-stack-column">
+          <div class="messy-deck-container" id="messyDeckTrigger" role="button" tabindex="0" aria-label="Open full screen lookbook">
+            <div class="deck-card card-1" data-index="0">
+              <img src="assets/1000271234.jpg" alt="M&eacute;re Haus Editorial Look 1">
+            </div>
+            <div class="deck-card card-2" data-index="1">
+              <img src="assets/1000271231.jpg" alt="M&eacute;re Haus Editorial Look 2">
+            </div>
+            <div class="deck-card card-3" data-index="2">
+              <img src="assets/1000271230.jpg" alt="M&eacute;re Haus Editorial Look 3">
+            </div>
+            <div class="deck-card card-4" data-index="3">
+              <img src="assets/1000271235.jpg" alt="M&eacute;re Haus Editorial Look 4">
+            </div>
+            <div class="deck-card card-5" data-index="4">
+              <img src="assets/1000271242.jpg" alt="M&eacute;re Haus Editorial Look 5">
+            </div>
+            <div class="deck-card card-6" data-index="5">
+              <img src="assets/1000271247.jpg" alt="M&eacute;re Haus Editorial Look 6">
+            </div>
+            <div class="deck-card card-7" data-index="6">
+              <img src="assets/1000271248.jpg" alt="M&eacute;re Haus Editorial Look 7">
+            </div>
+            <div class="deck-card card-8" data-index="7">
+              <img src="assets/1000271249.jpg" alt="M&eacute;re Haus Editorial Look 8">
+            </div>
+            <div class="deck-card card-9" data-index="8">
+              <img src="assets/1000271250.jpg" alt="M&eacute;re Haus Editorial Look 9">
+            </div>
+            <div class="deck-card card-10" data-index="9">
+              <img src="assets/1000271251.jpg" alt="M&eacute;re Haus Editorial Look 10">
+            </div>
+            <div class="deck-card card-11" data-index="10">
+              <img src="assets/atelier_1.jpg" alt="M&eacute;re Haus Editorial Look 11">
+            </div>
+            <div class="deck-card card-12" data-index="11">
+              <img src="assets/atelier_2.jpg" alt="M&eacute;re Haus Editorial Look 12">
+            </div>
+            <div class="deck-card card-13" data-index="12">
+              <img src="assets/atelier_3.jpg" alt="M&eacute;re Haus Editorial Look 13">
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Text Content -->
+        <div class="lookbook-text-column">
+          <span class="section-subtitle line-mask"><span class="line-mask-inner">STUDIO &amp; CRAFT</span></span>
+          <h2 class="section-title line-mask">
+            <span class="line-mask-inner">The Atelier</span>
+          </h2>
+          <p class="lookbook-description line-mask delay-1">
+            <span class="line-mask-inner">A curated glimpse into the M&eacute;re Haus aesthetic. Step inside our studio and discover the space and the people behind our signature craft.</span>
+          </p>
+          <div class="lookbook-prompt-wrapper line-mask delay-2">
+            <span class="line-mask-inner">
+              <p class="lookbook-prompt-text">(Click the photos to explore the studio)</p>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================
+       BOOKING MODAL DRAWER
+       ========================================== -->
+  <div id="bookingModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="booking-modal">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      
+      <form id="bookingForm">
+        <h2 id="modalTitle" class="modal-title">Reserve Your Session</h2>
+        <p class="modal-subtitle">Select your preferred service and time for an atelier consultation.</p>
+
+        <div class="form-group">
+          <label class="form-label" for="modalService">Service Required</label>
+          <select id="modalService" class="form-control" required>
+            <option value="Signature Cut">Signature Atelier Cut & Blowdry ($185)</option>
+            <option value="Couture Blowout">Couture Blowout & Wave Styling ($120)</option>
+            <option value="French Balayage">French Balayage & Glaze ($340)</option>
+            <option value="Full Spectrum Gloss">Full Spectrum Glossing ($165)</option>
+            <option value="Caviar Infusion">Caviar & Keratin Infusion ($210)</option>
+            <option value="Scalp Detox">Organic Scalp Detox ($150)</option>
+            <option value="Bridal Trial">Bridal Hair Consultation ($280)</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modalDate">Preferred Date</label>
+            <input type="date" id="modalDate" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modalTime">Preferred Time</label>
+            <select id="modalTime" class="form-control" required>
+              <option value="10:00 AM">10:00 AM</option>
+              <option value="12:00 PM">12:00 PM</option>
+              <option value="02:30 PM">02:30 PM</option>
+              <option value="04:30 PM">04:30 PM</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modalName">Full Name</label>
+          <input type="text" id="modalName" class="form-control" placeholder="e.g. Eleanor Vance" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modalEmail">Email Address</label>
+            <input type="email" id="modalEmail" class="form-control" placeholder="eleanor@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modalPhone">Phone Number</label>
+            <input type="tel" id="modalPhone" class="form-control" placeholder="+1 (555) 000-0000" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-mocha-solid magnetic-btn" style="width: 100%; margin-top: 15px; padding: 16px;">
+          <span>Confirm Reservation Request</span>
+        </button>
+      </form>
+
+      <!-- Booking Confirmation View -->
+      <div id="bookingSuccess" class="booking-success">
+        <div class="success-icon">âœ“</div>
+        <h3 class="modal-title">Reservation Received</h3>
+        <p class="modal-subtitle" style="margin-top: 10px;">
+          Thank you for choosing M&eacute;re Haus. Our atelier concierge will review your reservation and contact you via email shortly to confirm your session details.
+        </p>
+        <button class="btn-outline magnetic-btn" onclick="document.querySelector('.modal-close').click()" style="margin-top: 20px;">
+          <span>Return to Site</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MINIMALIST FOOTER & FINAL ELEMENTS
+       ========================================== -->
+  <footer class="mere-footer">
+    
+    <!-- Column 1: Graphic Logo & Address -->
+    <div class="mere-footer-col">
+      <a href="/">
+        <img src="assets/1000271225.png" alt="M&eacute;re Haus Logo" class="footer-brand-logo">
+      </a>
+      <p class="mere-footer-text">
+        M&Eacute;RE HAUS OF HAIR<br>
+        35 Marine Parade<br>
+        Bucasia, Mackay<br>
+        QLD 4750
+      </p>
+    </div>
+
+    <!-- Column 2: Social Icons -->
+    <div class="mere-footer-col">
+      <h4 class="mere-footer-title">Connect</h4>
+      <div class="footer-socials">
+        
+        <!-- Instagram Icon -->
+        <a href="https://instagram.com/merehausofhair/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+
+        <!-- TikTok Icon -->
+        <a href="https://www.tiktok.com/@hairbyamandamky?_r=1&_t=ZS-97SxWZg5bzU" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="TikTok">
+          <svg viewBox="0 0 24 24">
+            <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.004.16 2.099 1.48 3.518 3.559 3.869v3.743c-1.399-.044-2.719-.481-3.839-1.233v7.453c0 3.818-3.04 6.94-6.839 6.969-3.82.029-7.01-3.1-7.01-6.94 0-3.838 3.09-6.949 6.93-6.958.26 0 .52.019.78.058v3.839c-.259-.049-.529-.079-.799-.079-1.74 0-3.17 1.428-3.17 3.168 0 1.749 1.43 3.18 3.17 3.18 1.74 0 3.17-1.431 3.17-3.18V.02h3.138z"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Column 3: Booking -->
+    <div class="mere-footer-col">
+      <h4 class="mere-footer-title">Reservations</h4>
+      <a href="https://bookings.gettimely.com/mrhaus/bb/book" target="_blank" rel="noopener noreferrer" class="mere-footer-link" style="font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
+        Book an Appointment &rarr;
+      </a>
+    </div>
+
+    <!-- Copyright Bar with Developer Credit -->
+    <div class="mere-footer-bottom">
+      <span>&copy; 2026 M&eacute;re Haus. All Rights Reserved.</span>
+      <span>Designed by RMWebcraft</span>
+    </div>
+    
+  </footer>
+
+  <!-- STICKY MOBILE BOOK APPOINTMENT CTA BAR -->
+  <div class="mobile-sticky-cta-bar" id="mobileStickyCta">
+    <a href="#bookingModal" class="btn-primary mobile-sticky-btn magnetic-btn" data-open-modal>
+      <span>Book an Appointment</span>
+    </a>
+  </div>
+
+  <!-- ==========================================
+       FULL-SCREEN 'MESSY DECK' LOOKBOOK EXPANDED MODAL (#F7F3F0 Soft Cream)
+       ========================================== -->
+  <div class="lookbook-modal" id="lookbookModal" aria-hidden="true" role="dialog" aria-label="Expanded Lookbook Gallery">
+    <!-- Prominent Minimalist 'X' Close Button -->
+    <button class="lookbook-close-btn magnetic-btn" id="lookbookCloseBtn" aria-label="Close expanded lookbook">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+
+    <!-- Horizontally Scrollable Row Container (Raw Editorial Photos Only) -->
+    <div class="expanded-gallery-wrapper" id="lookbookModalScroll">
+      <img src="assets/1000271234.jpg" alt="M&eacute;re Haus Editorial Look 01" data-index="0">
+      <img src="assets/1000271231.jpg" alt="M&eacute;re Haus Editorial Look 02" data-index="1">
+      <img src="assets/1000271230.jpg" alt="M&eacute;re Haus Editorial Look 03" data-index="2">
+      <img src="assets/1000271235.jpg" alt="M&eacute;re Haus Editorial Look 04" data-index="3">
+      <img src="assets/1000271242.jpg" alt="M&eacute;re Haus Editorial Look 05" data-index="4">
+      <img src="assets/1000271247.jpg" alt="M&eacute;re Haus Editorial Look 06" data-index="5">
+      <img src="assets/1000271248.jpg" alt="M&eacute;re Haus Editorial Look 07" data-index="6">
+      <img src="assets/1000271249.jpg" alt="M&eacute;re Haus Editorial Look 08" data-index="7">
+      <img src="assets/1000271250.jpg" alt="M&eacute;re Haus Editorial Look 09" data-index="8">
+      <img src="assets/1000271251.jpg" alt="M&eacute;re Haus Editorial Look 10" data-index="9">
+      <img src="assets/atelier_1.jpg" alt="M&eacute;re Haus Editorial Look 11" data-index="10">
+      <img src="assets/atelier_2.jpg" alt="M&eacute;re Haus Editorial Look 12" data-index="11">
+      <img src="assets/atelier_3.jpg" alt="M&eacute;re Haus Editorial Look 13" data-index="12">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <div class="mobile-menu-overlay">
+      <nav class="mobile-nav-links">
+          <a href="#founders">Founders</a>
+          <a href="#experience">Experience</a>
+          <a href="#services">Services</a>
+          <a href="#lookbook">Lookbook</a>
+          <a href="#praise">Praise</a>
+          <a href="#book" class="mobile-book-btn">Book Appointment</a>
+      </nav>
+  </div>
+</body>
+</html>
+
