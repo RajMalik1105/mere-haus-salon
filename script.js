@@ -668,3 +668,45 @@ document.querySelectorAll('.mere-modal').forEach(modal => {
         }
     });
 });
+
+// Hamburger menu logic
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('mereHamburger');
+    const navLinks = document.getElementById('mereNavLinks');
+    
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function(e) {
+            e.preventDefault();
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when a link is clicked
+        const links = navLinks.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('active');
+            });
+        });
+    }
+});
+
+// Founders section fade-up observer
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeUpElements = document.querySelectorAll('.fade-up');
+  if ('IntersectionObserver' in window && fadeUpElements.length > 0) {
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
+    fadeUpElements.forEach(el => fadeObserver.observe(el));
+  } else {
+    fadeUpElements.forEach(el => el.classList.add('visible'));
+  }
+});
