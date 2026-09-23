@@ -2298,6 +2298,8 @@ body.menu-open .mobile-toggle .line:nth-child(2) {
     left: 0;
     width: 100%;
     height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
     background-color: #F7F3F0; /* Soft Cream */
     z-index: 1500;
     display: flex;
@@ -2318,7 +2320,7 @@ body.menu-open .mobile-menu-overlay {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .mobile-nav-link {
@@ -2390,6 +2392,8 @@ body.menu-open .mobile-nav-link:nth-child(8) { transition-delay: 0.45s; }
     left: 0;
     width: 100%;
     height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
     background-color: #F7F3F0; /* Soft Cream */
     z-index: 1500;
     display: flex;
@@ -2410,7 +2414,7 @@ body.menu-open .mobile-menu-overlay {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
 }
 
 .mobile-nav-links a {
@@ -4282,3 +4286,642 @@ details[open] .menu-item-row:nth-child(9) { animation-delay: 0.61s; }
 .fade-up-delay-1 { transition-delay: 0.1s; }
 .fade-up-delay-2 { transition-delay: 0.25s; }
 .fade-up-delay-3 { transition-delay: 0.4s; }
+
+
+/* ==========================================================================
+   REVIEWS SECTION (ANTIGRAVITY FLOATING)
+   ========================================================================== */
+.reviews-section {
+  background-color: var(--bg-cream, #F7F3F0);
+  overflow: hidden; /* Prevent floating cards from overflowing */
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.review-card {
+  background-color: #FFFFFF;
+  padding: 50px 40px;
+  border-radius: 4px;
+  box-shadow: 0 15px 40px rgba(92, 67, 46, 0.08), 0 5px 15px rgba(92, 67, 46, 0.03);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px;
+  border: 1px solid rgba(92, 67, 46, 0.05);
+}
+
+.review-text {
+  font-family: var(--font-heading, serif);
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #5C432E;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.review-author {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(92, 67, 46, 0.7);
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+/* Antigravity Animation */
+@keyframes floatAntigravity {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-card-1 {
+  animation: floatAntigravity 8s ease-in-out infinite;
+}
+
+.float-card-2 {
+  animation: floatAntigravity 9s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.float-card-3 {
+  animation: floatAntigravity 8.5s ease-in-out infinite;
+  animation-delay: 4s;
+}
+
+/* Pause animation on hover for readability */
+.review-card:hover {
+  animation-play-state: paused;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .review-card {
+    min-height: auto;
+    padding: 40px 30px;
+  }
+}
+
+
+/* ==========================================================================
+   SWIPER INTERACTIVE REVIEWS SECTION
+   ========================================================================== */
+.swiper-reviews-section {
+  padding: 80px 20px;
+  background-color: #F7F3F0; /* Kept the existing brand cream color */
+  overflow: hidden;
+}
+
+.swiper-reviews-container {
+  max-width: 900px; /* Keeps the text lines from getting too long to read */
+  margin: 0 auto;
+  text-align: center;
+}
+
+.swiper-reviews-title {
+  font-family: var(--font-heading, serif);
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+/* Swiper Styles */
+.swiper.reviewSwiper {
+  width: 100%;
+  padding-bottom: 60px; /* Space for the navigation dots */
+  padding-top: 20px;
+}
+
+.swiper-review-card {
+  background-color: #ffffff;
+  padding: 50px 60px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(92, 67, 46, 0.08); /* Using the brand mocha brown for shadows */
+  text-align: center;
+  margin: 10px; /* Prevents shadow clipping */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.quote-mark {
+  font-family: var(--font-heading, serif);
+  font-size: 5rem;
+  color: #d4c5b9;
+  line-height: 0.5;
+  margin-bottom: 20px;
+}
+
+.swiper-review-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.swiper-client-name {
+  font-family: var(--font-heading, serif);
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Customizing the Swiper Dots */
+.swiper-pagination-bullet {
+  background: #d4c5b9;
+  opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+  background: #b09e8d;
+  opacity: 1;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .swiper-review-card {
+    padding: 40px 30px;
+  }
+  .swiper-review-text {
+    font-size: 1rem;
+  }
+  .reviewSwiper .swiper-button-next, .reviewSwiper .swiper-button-prev {
+    display: none; /* Hide arrows on mobile, keep swipe to navigate */
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE REVIEWS CARDS SECTION
+   ========================================================================== */
+.reviews-section {
+  padding: 100px 20px;
+  background-color: #F7F3F0; /* Kept the existing brand cream color instead of #f7f5f2 to match */
+  text-align: center;
+}
+
+.reviews-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.reviews-title {
+  font-family: var(--font-heading, serif);
+  font-size: 3rem;
+  color: #222;
+  margin-bottom: 60px;
+  font-weight: 400;
+}
+
+/* THE GRID */
+.reviews-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* THE CARDS & ANIMATION */
+.review-card {
+  background-color: #ffffff;
+  flex: 1 1 320px;
+  max-width: 400px;
+  padding: 50px 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(92, 67, 46, 0.05); /* Soft resting shadow matching brand color */
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+}
+
+/* INTERACTIVE HOVER EFFECT */
+.review-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(92, 67, 46, 0.12); /* Shadow deepens to look 3D */
+}
+
+/* CARD INTERNAL STYLING */
+.quote-icon {
+  font-family: var(--font-heading, serif);
+  font-size: 5rem;
+  color: #e3dcd2;
+  line-height: 0;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.review-text {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  font-weight: 300;
+  flex-grow: 1; /* Pushes the name to the bottom evenly */
+  margin-bottom: 30px;
+}
+
+.client-info {
+  border-top: 1px solid rgba(92, 67, 46, 0.1); /* Match brand */
+  padding-top: 20px;
+}
+
+.client-name {
+  font-family: var(--font-heading, serif);
+  font-size: 1.2rem;
+  color: #222;
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+/* MOBILE VIEW EXCLUSIVE SETTINGS FOR REVIEWS */
+@media (max-width: 768px) {
+  
+  /* Create the horizontal scroll container */
+  .reviews-grid {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important; /* THIS IS THE FIX FOR THE SWIPE */
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; 
+    padding-bottom: 30px; 
+    padding-left: 20px; 
+    padding-right: 20px;
+    gap: 20px;
+    scrollbar-width: none; 
+  }
+  
+  .reviews-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+  }
+
+  /* Adjust the individual cards for the swipe effect */
+  .review-card {
+    flex: 0 0 85% !important; /* Card takes up 85% of screen, letting next card peek in */
+    scroll-snap-align: center; /* Snaps the card to the middle when swiped */
+    
+    /* STRICT READABILITY FIXES */
+    background-color: #ffffff !important; /* Forces a solid white background */
+    opacity: 1 !important;
+    padding: 40px 25px; /* Slightly tighter padding for mobile */
+    box-shadow: 0 8px 25px rgba(92, 67, 46, 0.08); /* Using the brand mocha brown for shadows */
+  }
+
+  /* Fix text contrast and legibility */
+  .review-text {
+    font-style: normal !important; /* Removes hard-to-read italics */
+    font-weight: 400 !important; /* Makes the text slightly thicker */
+    color: #222222 !important; /* Darkens the text for high contrast */
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  /* Disable the hover animation on mobile since there is no mouse */
+  .review-card:hover {
+    transform: none;
+    box-shadow: 0 8px 25px rgba(92, 67, 46, 0.08); /* Prevent shadow change on hover */
+  }
+}
+
+/* ==========================================================================
+   LUXURY FOOTER SECTION
+   ========================================================================== */
+.site-footer {
+  background-color: #fcfbf9; /* Matches the warm off-white of the site */
+  border-top: 1px solid #eaeaea; /* Crisp, thin line to separate from content */
+  padding: 80px 20px 20px 20px;
+  color: #333;
+}
+
+.footer-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: flex-start; /* Ensures all columns align at the very top */
+  padding-bottom: 60px;
+}
+
+/* TYPOGRAPHY & TITLES */
+.footer-title {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+/* COLUMN 1: LOGO & ADDRESS */
+.footer-logo {
+  max-width: 180px; /* Forces the logo to be small and elegant */
+  height: auto;
+  margin-bottom: 20px;
+  mix-blend-mode: multiply; /* Helps hide the logo's background box if it's not transparent */
+}
+
+.address-text p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+  margin: 0;
+  font-weight: 300;
+}
+.address-text strong {
+  font-weight: 600;
+  color: #222;
+}
+
+/* COLUMN 2: CONNECT */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.social-icon {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-icon:hover {
+  color: #a39171; /* Brand highlight color */
+}
+
+/* COLUMN 3: BOOKING */
+.footer-book-btn {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  color: #222;
+  text-decoration: none;
+  border-bottom: 1px solid #222;
+  padding-bottom: 4px;
+  transition: opacity 0.3s ease;
+  display: inline-block;
+}
+
+.footer-book-btn:hover {
+  opacity: 0.6;
+}
+
+/* BOTTOM COPYRIGHT BAR */
+.footer-bottom {
+  border-top: 1px solid #eaeaea;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    grid-template-columns: 1fr; /* Stacks everything into a single column */
+    text-align: center;
+    gap: 50px;
+  }
+  
+  .footer-logo {
+    margin: 0 auto 20px auto; /* Centers the logo on mobile */
+  }
+  
+  .social-links {
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   TEAM SECTION (INTERACTIVE PAMPHLET)
+   ========================================================================== */
+.team-section {
+  padding: 100px 20px;
+  background-color: #F7F3F0; /* Soft background to make the white cards pop */
+}
+
+.team-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+align-items: flex-start; /* This stops the other card from expanding */
+}
+
+/* THE PAMPHLET CARD */
+.pamphlet-card {
+  background-color: #ffffff;
+  flex: 1 1 300px;
+  max-width: 360px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(92, 67, 46, 0.05); /* Paper-like shadow matching brand color */
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+
+/* TOP: THE PHOTO */
+.card-photo {
+  height: 380px;
+  overflow: hidden;
+}
+
+.card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; /* <--- Fix for cropped photos */
+  transition: transform 0.7s ease;
+}
+
+.pamphlet-card:hover .card-photo img {
+  transform: scale(1.04); /* Subtle zoom on hover */
+}
+
+/* MIDDLE: HEADER */
+.card-header {
+  padding: 30px 30px 10px 30px;
+  text-align: center;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.team-name {
+  font-family: var(--font-heading, serif);
+  font-size: 2.2rem;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.team-title {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 0;
+}
+
+/* BOTTOM: THE INTERACTIVE BIO (The Pamphlet Fold) */
+.card-body {
+  display: grid;
+  grid-template-rows: 0fr; /* Collapses the section to 0 height initially */
+  transition: grid-template-rows 0.5s cubic-bezier(0.25, 1, 0.5, 1), padding 0.5s ease;
+  padding: 0 30px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.pamphlet-card:hover .card-body {
+  grid-template-rows: 1fr; /* Expands the section to fit the text */
+  padding-bottom: 30px; /* Adds padding at the bottom when open */
+}
+
+.bio-content {
+  overflow: hidden; /* Prevents text from spilling out while closed */
+  opacity: 0;
+  transition: opacity 0.4s ease 0.1s; /* Fades the text in slightly after it starts opening */
+}
+
+.pamphlet-card:hover .bio-content {
+  opacity: 1;
+}
+
+.bio-content p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #555;
+  font-weight: 300;
+  margin-top: 15px; /* Space between title and bio */
+}
+
+
+
+/* ==========================================================================
+   TEAM PAMPHLET TILT EFFECTS
+   ========================================================================== */
+/* TILT AMANDA\'s CARD (Left) */
+.pamphlet-card:nth-child(1) {
+  transform: rotate(-4deg);
+  transform-origin: bottom right; /* Anchors the tilt near the middle bottom */
+}
+
+/* TILT JUSTINE\'S CARD (Right) */
+.pamphlet-card:nth-child(2) {
+  transform: rotate(4deg);
+  transform-origin: bottom left; 
+}
+
+/* HOVER EFFECTS: Float up while keeping the tilt */
+.pamphlet-card:nth-child(1):hover {
+  transform: translateY(-12px) rotate(-4deg);
+  box-shadow: 0 20px 40px rgba(92, 67, 46, 0.1);
+  z-index: 10; /* Pops the hovered card to the front */
+}
+
+.pamphlet-card:nth-child(2):hover {
+  transform: translateY(-12px) rotate(4deg);
+  box-shadow: 0 20px 40px rgba(92, 67, 46, 0.1);
+  z-index: 10; /* Pops the hovered card to the front */
+}
+
+
+
+/* THE TAP PROMPT */
+.tap-prompt {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.65rem;
+  color: #a39171; /* Matches the brand accent color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Fades out the prompt when the card is hovered/tapped open */
+.pamphlet-card:hover .tap-prompt {
+  opacity: 0;
+}
+
+/* UPDATED MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .team-container {
+    gap: 40px;
+  }
+  
+  .card-photo {
+    height: 350px;
+  }
+  
+  /* Removes the tilt for mobile readability */
+  .pamphlet-card:nth-child(1),
+  .pamphlet-card:nth-child(2) {
+    transform: rotate(0); 
+  }
+  
+  .pamphlet-card:nth-child(1):hover,
+  .pamphlet-card:nth-child(2):hover {
+    transform: rotate(0) translateY(-5px); /* Adds a tiny lift instead of a tilt */
+  }
+
+  /* Note: The old rules forcing .card-body to be open are now removed! */
+}
