@@ -710,3 +710,22 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeUpElements.forEach(el => el.classList.add('visible'));
   }
 });
+
+
+// =========================================================
+// VIDEO GRID: Toggle is-playing class for tilt/focus effect
+// =========================================================
+document.querySelectorAll('.video-grid video').forEach(function(video) {
+  video.addEventListener('play', function() {
+    document.querySelectorAll('.video-grid video').forEach(function(v) {
+      v.classList.remove('is-playing');
+    });
+    video.classList.add('is-playing');
+  });
+  video.addEventListener('pause', function() {
+    video.classList.remove('is-playing');
+  });
+  video.addEventListener('ended', function() {
+    video.classList.remove('is-playing');
+  });
+});

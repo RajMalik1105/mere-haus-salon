@@ -4925,3 +4925,203 @@ align-items: flex-start; /* This stops the other card from expanding */
 
   /* Note: The old rules forcing .card-body to be open are now removed! */
 }
+
+
+/* MOBILE FOOTER COPYRIGHT FIX */
+@media (max-width: 768px) {
+  .footer-bottom,
+  .footer-bottom p,
+  .footer-copyright {
+    display: block !important; /* Overrides any accidental display: none */
+    visibility: visible !important;
+    color: #222222 !important; /* Ensures the text isn't blending into a white background */
+    text-align: center;
+    padding: 20px 15px 80px 15px !important;
+    line-height: 1.6;
+    font-size: 0.8rem;
+    position: relative;
+    z-index: 50; /* Forces it to sit on top of any overlapping elements */
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   MERE HAUS EXTENSIONS -- CHINA FACTORY VIDEO EDITORIAL
+   ========================================================================== */
+.china-factory-editorial {
+  background-color: #F7F3F0;
+  padding: 100px 5%;
+}
+
+.editorial-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.story-videos {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Lock the grid into perfect symmetry */
+.video-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+/* Base styles for all videos */
+.video-grid video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.5s ease, z-index 0s;
+}
+
+/* Make the Left Hero Video span the entire left side */
+.video-grid > video:nth-child(1) {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+
+}
+
+/* Interactive Hover State */
+.video-grid > video:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+/* Straightens and locks focus when actively playing */
+.video-grid > video.is-playing {
+  transform: scale(1.04);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+}
+
+.video-hero {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #000;
+  max-height: 500px;
+}
+
+.video-landscape {
+  grid-column: 2;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #000;
+  max-height: 240px;
+}
+
+.story-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.china-factory-editorial .section-title {
+  font-family: var(--font-heading, serif);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #5C432E;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.china-factory-editorial .subtitle {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #a39171;
+  margin-bottom: 30px;
+}
+
+.china-factory-editorial .story-text p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #4a3728;
+  margin-bottom: 16px;
+}
+
+.guarantee-badge {
+  margin-top: 30px;
+  padding: 20px 25px;
+  border-left: 3px solid #a39171;
+  background-color: rgba(163, 145, 113, 0.06);
+  border-radius: 0 4px 4px 0;
+}
+
+.guarantee-badge p {
+  font-family: var(--font-body, sans-serif);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #5C432E;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .editorial-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  /* Forces the text to appear first in the column */
+  .story-text {
+    order: 1;
+    flex: none;
+    position: relative;
+    top: 0;
+  }
+
+  /* Forces the videos to appear second */
+  .story-videos {
+    order: 2;
+    width: 100%;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .video-hero {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    aspect-ratio: 4 / 5;
+  }
+  
+  .video-landscape {
+    grid-column: 1 !important;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    aspect-ratio: 16 / 9;
+  }
+
+  .china-factory-editorial .section-title {
+    font-size: 2rem;
+  }
+}
+
+/* VIDEO GRID -- tilt removed */
