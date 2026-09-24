@@ -698,3 +698,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+// Founders and Custom Tailored section fade-up observer
+document.addEventListener('DOMContentLoaded', () => {
+  const fadeUpElements = document.querySelectorAll('.fade-up');
+  if ('IntersectionObserver' in window && fadeUpElements.length > 0) {
+    const fadeObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
+    fadeUpElements.forEach(el => fadeObserver.observe(el));
+  } else {
+    fadeUpElements.forEach(el => el.classList.add('visible'));
+  }
+});
