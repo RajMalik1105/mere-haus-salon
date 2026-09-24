@@ -5125,3 +5125,150 @@ align-items: flex-start; /* This stops the other card from expanding */
 }
 
 /* VIDEO GRID -- tilt removed */
+
+
+/* ==========================================
+   NEW LUXURY MOBILE MENU (NO SCROLLING)
+   ========================================== */
+
+.luxury-hamburger {
+  display: none; 
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10000; 
+  position: relative;
+}
+
+.luxury-hamburger span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: #222;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Animated 'X' when open */
+.luxury-hamburger.is-active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.luxury-hamburger.is-active span:nth-child(2) { opacity: 0; }
+.luxury-hamburger.is-active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Full Screen Menu Overlay */
+.luxury-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  background-color: #F7F3F0; 
+  z-index: 9999;
+  
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  
+  /* Centers the content perfectly and disables scrolling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; 
+}
+
+.luxury-mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Shrinks the gaps between links */
+.luxury-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px; 
+  width: 100%;
+}
+
+/* Shrinks the font size so 8 links fit on one screen */
+.luxury-mobile-nav a {
+  font-family: var(--font-body, sans-serif);
+  font-size: 1.1rem; 
+  color: #222;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 5px 0;
+}
+
+@media (max-width: 900px) {
+  .luxury-hamburger { display: flex; }
+  #mereNavLinks { display: none !important; } 
+}
+
+
+/* Close Button for Luxury Menu */
+.luxury-close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #222;
+  cursor: pointer;
+  z-index: 10001;
+  line-height: 1;
+}
+
+
+/* ==========================================
+   MOBILE MENU BOOKING BUTTON
+   ========================================== */
+.luxury-mobile-nav a.luxury-mobile-book {
+  background-color: #a47e6a; /* M&eacute;re Haus signature mocha brown */
+  color: #ffffff; /* White text */
+  padding: 16px 35px;
+  margin-top: 15px; /* Adds a visual gap between the standard links and the button */
+  font-size: 0.9rem; /* Crisper, slightly smaller font for the button */
+  font-weight: 600;
+  border-radius: 2px;
+  border: 1px solid #a47e6a;
+  transition: all 0.3s ease;
+  font-style: normal !important; /* Overriding previous italic */
+}
+
+/* Optional hover/tap effect */
+.luxury-mobile-nav a.luxury-mobile-book:hover,
+.luxury-mobile-nav a.luxury-mobile-book:active {
+  background-color: transparent;
+  color: #a47e6a;
+}
+
+
+
+/* ==========================================
+   DESKTOP HEADER SPACING ADJUSTMENTS
+   ========================================== */
+
+/* Pulls the logo further to the left edge */
+.mere-header {
+  padding-left: 3% !important; 
+  padding-right: 3% !important;
+}
+
+/* Ensures the logo doesn't have hidden margins pushing it right */
+.brand-logo {
+  margin-left: 0 !important;
+}
+
+/* Tightens the gap between links so the new 'Extensions' text fits cleanly */
+.mere-nav-links {
+  gap: 25px !important; 
+}
+
+/* Ensures the text size remains consistent to fit the new link */
+.mere-nav-links a {
+  font-size: 0.85rem !important;
+}

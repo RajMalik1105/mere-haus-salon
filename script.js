@@ -671,61 +671,30 @@ document.querySelectorAll('.mere-modal').forEach(modal => {
 
 // Hamburger menu logic
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.getElementById('mereHamburger');
-    const navLinks = document.getElementById('mereNavLinks');
+    const hamburger = document.getElementById('luxuryHamburger');
+    const closeBtn = document.getElementById('luxuryCloseBtn');
+    const mobileMenu = document.getElementById('luxuryMobileMenu');
     
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function(e) {
-            e.preventDefault();
-            hamburger.classList.toggle('open');
-            navLinks.classList.toggle('active');
+    if (hamburger && mobileMenu) {
+        const menuLinks = mobileMenu.querySelectorAll('a');
+
+        // Open the menu when hamburger is clicked
+        hamburger.addEventListener('click', () => {
+          mobileMenu.classList.add('is-open');
         });
-        
-        // Close menu when a link is clicked
-        const links = navLinks.querySelectorAll('a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                navLinks.classList.remove('active');
+
+        // Close the menu when the X is clicked
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+              mobileMenu.classList.remove('is-open');
             });
+        }
+
+        // Close the menu when a link is clicked
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('is-open');
+          });
         });
     }
-});
-
-// Founders section fade-up observer
-document.addEventListener('DOMContentLoaded', () => {
-  const fadeUpElements = document.querySelectorAll('.fade-up');
-  if ('IntersectionObserver' in window && fadeUpElements.length > 0) {
-    const fadeObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    
-    fadeUpElements.forEach(el => fadeObserver.observe(el));
-  } else {
-    fadeUpElements.forEach(el => el.classList.add('visible'));
-  }
-});
-
-
-// =========================================================
-// VIDEO GRID: Toggle is-playing class for tilt/focus effect
-// =========================================================
-document.querySelectorAll('.video-grid video').forEach(function(video) {
-  video.addEventListener('play', function() {
-    document.querySelectorAll('.video-grid video').forEach(function(v) {
-      v.classList.remove('is-playing');
-    });
-    video.classList.add('is-playing');
-  });
-  video.addEventListener('pause', function() {
-    video.classList.remove('is-playing');
-  });
-  video.addEventListener('ended', function() {
-    video.classList.remove('is-playing');
-  });
 });

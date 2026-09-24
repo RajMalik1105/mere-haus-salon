@@ -47,7 +47,7 @@
     </a>
     
     <!-- The Hamburger Button -->
-    <button class="mere-hamburger" id="mereHamburger" aria-label="Toggle Navigation">
+    <button class="luxury-hamburger" id="luxuryHamburger" aria-label="Toggle Navigation">
       <span></span>
       <span></span>
       <span></span>
@@ -56,6 +56,7 @@
     <nav class="mere-nav-links" id="mereNavLinks">
       <a href="#founders">Founders</a>
       <a href="#experience">Experience</a>
+      <a href="#extensions">Extensions</a>
       <a href="#services">Services</a>
       <a href="#gallery">Lookbook</a>
       <a href="#praise">Praise</a>
@@ -955,15 +956,20 @@
   </div>
 
   <script src="script.js"></script>
-  <div class="mobile-menu-overlay">
-      <nav class="mobile-nav-links">
-          <a href="#founders">Founders</a>
-          <a href="#experience">Experience</a>
-          <a href="#services">Services</a>
-          <a href="#lookbook">Lookbook</a>
-          <a href="#praise">Praise</a>
-          <a href="#book" class="mobile-book-btn">Book Appointment</a>
-      </nav>
+  <div id="luxuryMobileMenu" class="luxury-mobile-menu" data-lenis-prevent>
+    <!-- ADD THIS CLOSE BUTTON -->
+    <button id="luxuryCloseBtn" class="luxury-close-btn" aria-label="Close Menu">&times;</button>
+    
+    <nav class="luxury-mobile-nav">
+      <a href="#founders">Founders</a>
+      <a href="#team">Artists</a>
+      <a href="#experience">Experience</a>
+      <a href="#extensions">Extensions</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Lookbook</a>
+      <a href="#praise">Praise</a>
+      <a href="https://bookings.gettimely.com/mrhaus/bb/book" target="_blank" class="luxury-mobile-book">Book Appointment</a>
+    </nav>
   </div>
 </body>
 </html>
